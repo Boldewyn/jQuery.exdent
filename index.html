@@ -6,52 +6,69 @@
     <style>
 body {
   font-family: Times New Roman, serif;
-  font-size: 26px;
+  font-size: 16px;
 }
 article {
   margin: 0 2em 2em;
   display: block;
 }
-.article p {
-  color: #666;
+article p {
+  color: #333;
+  margin: 0 0 1em;
 }
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
+.demo {
+  font-size: 24px;
+  padding: .667em 1.333em;
+  max-width: 20em;
 }
-q:before {
-  content: open-quote;
-  color: darkgreen;
-  font-weight: bold;
+.demo p {
+  color: #999;
+  border-left: 1px solid #f99;
+  text-align: justify;
 }
-q:after {
-  content: close-quote;
+.demo b {
+  color: black;
 }
-.hardcoded q {
-  quotes: '' '' '' '';
-}
-.hardcoded q:before,
-.hardcoded q:after {
-  content: '';
-  content: none;
-}
-.article strong {
-  color: darkgreen;
-}
+q { quotes: none; }
+q:before, q:after { content: none; }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="jquery.exdent.js"></script>
+    <script>
+$(window).bind('load resize', function() {
+  $('.demo-run').exdent({ by: '-13px' });
+});
+    </script>
   </head>
   <body>
     <article>
       <h1>jQuery.exdent</h1>
-      <p>A small jQuery plugin to enable <a href="http://en.wikipedia.org/wiki/Hanging_punctuation">hanging punctuation</a>, an advanced typographic feature. Elements are only exdented, if they are at the beginning of a line.</p>
-      <p>As default, only <code>&lt;q&gt;</code> elements are exdented,  but you can customize this to your needs:</p>
+      <p>A small jQuery plugin to enable
+        <a href="http://en.wikipedia.org/wiki/Hanging_punctuation">hanging
+        punctuation</a>, an advanced typographic feature. Elements are only
+        exdented, if they are at the beginning of a line. The plugin changes
+        the boring:</p>
+      <div class="demo">
+        <p><q><b>“</b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        Ut a sapien. Aliquam aliquet purus molestie dolor. Integer quis eros
+        ut erat posuere dictum.</q></p>
+      </div>
+      <p>to this:</p>
+      <div class="demo demo-run">
+        <p><q><b>“</b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        Ut a sapien. Aliquam aliquet purus molestie dolor. Integer quis eros
+        ut erat posuere dictum.</q></p>
+      </div>
+      <p>As default <code>&lt;q&gt;</code> elements are exdented, but you can
+        customize this to your needs:</p>
       <pre>$('body').exdent({
   selector: 'blockquote, q',
   width: '-.5em'
 });</pre>
       <p>This exdents both blockquotes and <code>&lt;q></code> by -.5em.</p>
       <p>See <a href="demo.html">the demo</a> yourself. <a
-        href="https://github.com/Boldewyn/exdent/issues">Issues are
-      tracked</a> on Github, and the project is <a href="https://github.com/Boldewyn/exdent/">hosted on Github</a>, too.</p>
+        href="https://github.com/Boldewyn/jQuery.exdent/issues">Issues are
+      tracked</a> on Github, and the project is <a href="https://github.com/Boldewyn/jQuery.exdent/">hosted on Github</a>, too.</p>
       <hr/>
       <p>Note: Don't confuse this with <a href="http://api.jquery.com/jquery.extend">jQuery.extend</a>. ;-)</p>
     </article>
