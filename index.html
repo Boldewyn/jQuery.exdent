@@ -7,19 +7,35 @@
 body {
   font-family: Times New Roman, serif;
   font-size: 16px;
+  line-height: 20px;
+  color: #333;
+}
+h1 {
+  text-align: center;
+  font: bold 48px/60px Times New Roman, serif;
+  margin: 0 0 .33em;
+  letter-spacing: .1em;
 }
 article {
-  margin: 0 2em 2em;
+  margin: 0 auto;
   display: block;
+  max-width: 40em;
 }
 article p {
-  color: #333;
-  margin: 0 0 1em;
+  margin: 0 0 20px;
+}
+pre {
+  font-size: 1em;
+  line-height: 20px;
+  padding: 0 20px;
+  margin: 0 0 20px;
 }
 .demo {
   font-size: 24px;
-  padding: .667em 1.333em;
+  line-height: 30px;
+  padding: 20px 40px;
   max-width: 20em;
+  margin: 0 auto;
 }
 .demo p {
   color: #999;
@@ -41,6 +57,7 @@ $(window).bind('load resize', function() {
     </script>
   </head>
   <body>
+    <p><a href="http://github.com/Boldewyn/jQuery.exdent/"><img style="border: 0pt none ; position: absolute; top: 0; right: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a></p>
     <article>
       <h1>jQuery.exdent</h1>
       <p>A small jQuery plugin to enable
