@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Demo: Hanging Punctuation in CSS</title>
+    <style>
+body {
+  font-family: Times New Roman, serif;
+  font-size: 26px;
+}
+.article {
+  margin: 0 2em 2em;
+  border-left: 1px solid #faa;
+}
+.article p {
+  color: #666;
+}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+q:before {
+  content: open-quote;
+  color: darkgreen;
+  font-weight: bold;
+}
+q:after {
+  content: close-quote;
+}
+.hardcoded q {
+  quotes: '' '' '' '';
+}
+.hardcoded q:before,
+.hardcoded q:after {
+  content: '';
+  content: none;
+}
+.article q {
+}
+.article strong {
+  color: darkgreen;
+}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="jquery.exdent.js"></script>
+    <script>
+$(window).bind('load resize', function() {
+    $('div.pseudo').exdent({ detect: true });
+    $('div.hardcoded').exdent({ by: '-.5em'  });
+});
+    </script>
+  </head>
+  <body>
+    <div>
+      <p><a href="http://boldewyn.github.com/exdent">Back to the
+      homepage.</a></p>
+      <div class="article">
+        <p>Without hanging punctuation:</p>
+        <p><strong>“</strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Cras sagittis mauris ut nisi cursus eleifend. Quisque consectetur
+        gravida urna id euismod. Sed consectetur adipiscing vehicula.
+        Fusce arcu velit, scelerisque et iaculis eu, posuere quis lacus.
+        Sed non est eu augue vestibulum malesuada ut non purus. Suspendisse
+        vel feugiat turpis. Sed consectetur nibh ut ligula dignissim
+        tincidunt. Donec luctus feugiat enim ac dapibus.</p>
+      </div>
+      <div class="article pseudo">
+        <p>With hanging punctuation (pseudo-element):</p>
+        <p><q>Lorem ipsum dolor sit amet,</q> consectetur adipiscing elit.
+        Cras sagittis mauris ut nisi cursus eleifend. Quisque consectetur
+        gravida urna id euismod. Sed consectetur adipiscing vehicula.
+        Fusce arcu velit, scelerisque et iaculis eu, posuere quis lacus.
+        <q><b>This works also in the middle of the text.</b> Try to resize the
+        window to bring this quote to the left border.</q>
+        Sed non est eu augue vestibulum malesuada ut non purus. Suspendisse
+        vel feugiat turpis. Sed consectetur nibh ut ligula dignissim
+        tincidunt. Donec luctus feugiat enim ac dapibus.</q></p>
+      </div>
+      <div class="article hardcoded">
+        <p>With hanging punctuation (pseudo-element):</p>
+        <p><q><strong>“</strong>Lorem ipsum dolor sit amet,</q> consectetur adipiscing elit.
+        Cras sagittis mauris ut nisi cursus eleifend. Quisque consectetur
+        gravida urna id euismod. Sed consectetur adipiscing vehicula.
+        Fusce arcu velit, scelerisque et iaculis eu, posuere quis lacus.
+        <q><strong>“</strong><b>This works also in the middle of the text.</b> Try to resize the
+        window to bring this quote to the left border.</q>
+        Sed non est eu augue vestibulum malesuada ut non purus. Suspendisse
+        vel feugiat turpis. Sed consectetur nibh ut ligula dignissim
+        tincidunt. Donec luctus feugiat enim ac dapibus.</q></p>
+      </div>
+    </div>
+  </body>
+</html>

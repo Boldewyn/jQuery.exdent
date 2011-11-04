@@ -1,0 +1,25 @@
+                            jQuery.exdent
+
+A small jQuery plugin to enable hanging punctuation[1], an advanced
+typographic feature. Elements are only exdented, if they are at the
+beginning of a line.
+
+As default,  only <q> elements are exdented,  but you can customize
+this to your needs:
+
+    $('body').exdent({
+      selector: 'blockquote, q',
+      width: '-.5em'
+    });
+
+This exdents both blockquotes and <q> by -.5em.
+
+See [2] for a demo and [3] for issues.
+
+Note: Don't confuse this with jQuery.extend. ;-)
+
+--
+
+[1] http://en.wikipedia.org/wiki/Hanging_punctuation
+[2] http://boldewyn.github.com/exdent/
+[3] https://github.com/Boldewyn/exdent/issues
