@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery.exdent: Hanging punctuation</title>
+    <style>
+body {
+  font-family: Times New Roman, serif;
+  font-size: 26px;
+}
+article {
+  margin: 0 2em 2em;
+  display: block;
+}
+.article p {
+  color: #666;
+}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+q:before {
+  content: open-quote;
+  color: darkgreen;
+  font-weight: bold;
+}
+q:after {
+  content: close-quote;
+}
+.hardcoded q {
+  quotes: '' '' '' '';
+}
+.hardcoded q:before,
+.hardcoded q:after {
+  content: '';
+  content: none;
+}
+.article strong {
+  color: darkgreen;
+}
+    </style>
+  </head>
+  <body>
+    <article>
+      <h1>jQuery.exdent</h1>
+      <p>A small jQuery plugin to enable <a href="http://en.wikipedia.org/wiki/Hanging_punctuation">hanging punctuation</a>, an advanced typographic feature. Elements are only exdented, if they are at the beginning of a line.</p>
+      <p>As default, only <code>&lt;q&gt;</code> elements are exdented,  but you can customize this to your needs:</p>
+      <pre>$('body').exdent({
+  selector: 'blockquote, q',
+  width: '-.5em'
+});</pre>
+      <p>This exdents both blockquotes and <code>&lt;q></code> by -.5em.</p>
+      <p>See <a href="demo.html">the demo</a> yourself. <a
+        href="https://github.com/Boldewyn/exdent/issues">Issues are
+      tracked</a> on Github, and the project is <a href="https://github.com/Boldewyn/exdent/">hosted on Github</a>, too.</p>
+      <hr/>
+      <p>Note: Don't confuse this with <a href="http://api.jquery.com/jquery.extend">jQuery.extend</a>. ;-)</p>
+    </article>
+  </body>
+</html>
