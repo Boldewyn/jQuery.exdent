@@ -2,7 +2,19 @@
 
 A small jQuery plugin to enable hanging punctuation[1], an advanced
 typographic feature. Elements are only exdented, if they are at the
-beginning of a line.
+beginning of a line. The plugin changes the boring
+
+             "Lorem  ipsum  dolor  sit  amet, consectetuer
+             adipiscing elit. Ut a sapien. Aliquam aliquet
+             purus  molestie  dolor. Integer  quis eros ut
+             erat posuere dictum.
+
+to this:
+
+            "Lorem  ipsum  dolor  sit  amet,  consectetuer
+             adipiscing elit. Ut a sapien. Aliquam aliquet
+             purus  molestie  dolor. Integer  quis eros ut
+             erat posuere dictum.
 
 As default,  only <q> elements are exdented,  but you can customize
 this to your needs:
