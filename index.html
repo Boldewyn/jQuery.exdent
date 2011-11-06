@@ -79,13 +79,24 @@ $(window).bind('load resize', function() {
       <p>As default <code>&lt;q&gt;</code> elements are exdented, but you can
         customize this to your needs:</p>
       <pre>$('body').exdent({
-  selector: 'blockquote, q',
-  width: '-.5em'
+  by: '-.5em',
+  selector: 'blockquote, q'
 });</pre>
       <p>This exdents both blockquotes and <code>&lt;q></code> by -.5em.</p>
       <p>See <a href="demo.html">the demo</a> yourself. <a
         href="https://github.com/Boldewyn/jQuery.exdent/issues">Issues are
       tracked</a> on Github, and the project is <a href="https://github.com/Boldewyn/jQuery.exdent/">hosted on Github</a>, too.</p>
+      <hr/>
+      <h2>Options:</h2>
+      <p>jQuery.exdent understands three option parameters:</p>
+      <ul>
+        <li><code>by</code> (String):  the width by which to exdent,  must be negative (as
+        long as you don't want to *indent*).</li>
+        <li><code>detect</code> (Boolean or String): whether to autodetect the exdentation
+        width (will ignore <code>"by"</code>).  If a string is given,  this is used
+        for detection, other wise an english opening quote, U+201C.</li>
+        <li><code>selector</code> (String): the elements to exdent, defaults to 'q'.</li>
+      </ul>
       <hr/>
       <p>Note: Don't confuse this with <a href="http://api.jquery.com/jquery.extend">jQuery.extend</a>. ;-)</p>
     </article>
