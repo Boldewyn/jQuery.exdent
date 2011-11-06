@@ -20,8 +20,8 @@ As default,  only <q> elements are exdented,  but you can customize
 this to your needs:
 
     $('body').exdent({
-      selector: 'blockquote, q',
-      width: '-.5em'
+      by: '-.5em',
+      selector: 'blockquote, q'
     });
 
 This exdents both blockquotes and <q> by -.5em.
