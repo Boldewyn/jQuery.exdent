@@ -28,7 +28,25 @@ This exdents both blockquotes and <q> by -.5em.
 
 See [2] for a demo and [3] for issues.
 
+
+--
+
+O p t i o n s :
+
+jQuery.exdent understands three option parameters:
+
+- by (String):  the width by which to exdent,  must be negative (as
+  long as you don't want to *indent*).
+- detect (Boolean or String): whether to autodetect the exdentation
+  width (will ignore "width").  If a string is given,  this is used
+  for detection, other wise an english opening quote, U+201C.
+- selector (String): the elements to exdent, defaults to 'q'.
+
+
+--
+
 Note: Don't confuse this with jQuery.extend. ;-)
+
 
 --
 
