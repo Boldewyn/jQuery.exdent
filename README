@@ -19,10 +19,10 @@ to this:
 You can customize the plugin to fit your exdentation needs:
 
     $('blockquote, q').exdent({
-      by: '-.5em'
+      by: '.5em'
     });
 
-This exdents both <blockquote> and <q> by -.5em.
+This exdents both <blockquote> and <q> by 0.5em.
 
 See [2] for a demo and [3] for issues.
 
@@ -33,11 +33,11 @@ O p t i o n s :
 
 jQuery.exdent understands two option parameters:
 
-- by (String):  the width by which to exdent,  must be negative (as
-  long as you don't want to *indent*).
+- by  (String):  the width  by which to exdent,  this is a positive
+  value.
 - detect (Boolean or String): whether to autodetect the exdentation
   width (will ignore "width").  If a string is given,  this is used
-  for detection, other wise an english opening quote, U+201C.
+  for detection, otherwise an english opening quote, U+201C.
 
 
 --
