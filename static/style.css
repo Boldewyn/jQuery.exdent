@@ -1,5 +1,5 @@
 body {
-  font-family: Crimson, Georgia, serif;
+  font-family: "Crimson Text", Crimson, Georgia, serif;
   font-size: 100%;
   line-height: 1.25;
   color: #333;
@@ -7,13 +7,13 @@ body {
 }
 h1 {
   text-align: center;
-  font:  580%/1.2931 Crimson, Georgia, serif;
+  font:  580%/1.2931 "Crimson Text", Crimson, Georgia, serif;
   margin: 0 0 .43104em;
   letter-spacing: .1em;
   color: #555;
 }
 h2 {
-  font: bold 200%/1.25 Crimson, Georgia, serif;
+  font: bold 200%/1.25 "Crimson Text", Crimson, Georgia, serif;
   margin: 0 0 .5em;
   color: #555;
 }
