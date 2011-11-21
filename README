@@ -16,15 +16,13 @@ to this:
              purus  molestie  dolor. Integer  quis eros ut
              erat posuere dictum.
 
-As default,  only <q> elements are exdented,  but you can customize
-this to your needs:
+You can customize the plugin to fit your exdentation needs:
 
-    $('body').exdent({
-      by: '-.5em',
-      selector: 'blockquote, q'
+    $('blockquote, q').exdent({
+      by: '-.5em'
     });
 
-This exdents both blockquotes and <q> by -.5em.
+This exdents both <blockquote> and <q> by -.5em.
 
 See [2] for a demo and [3] for issues.
 
@@ -33,14 +31,13 @@ See [2] for a demo and [3] for issues.
 
 O p t i o n s :
 
-jQuery.exdent understands three option parameters:
+jQuery.exdent understands two option parameters:
 
 - by (String):  the width by which to exdent,  must be negative (as
   long as you don't want to *indent*).
 - detect (Boolean or String): whether to autodetect the exdentation
   width (will ignore "width").  If a string is given,  this is used
   for detection, other wise an english opening quote, U+201C.
-- selector (String): the elements to exdent, defaults to 'q'.
 
 
 --
