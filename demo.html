@@ -26,9 +26,12 @@ q:before {
 q:after {
   content: close-quote;
 }
+.cssHooks q,
 .hardcoded q {
   quotes: '' '' '' '';
 }
+.cssHooks q:before,
+.cssHooks q:after,
 .hardcoded q:before,
 .hardcoded q:after {
   content: '';
@@ -46,6 +49,7 @@ q:after {
 $(window).bind('load resize', function() {
     $('div.pseudo q').exdent({ detect: true });
     $('div.hardcoded q').exdent({ by: '.5em'  });
+    $('div.cssHooks q').css('exdent', '.5em');
 });
     </script>
   </head>
@@ -76,7 +80,19 @@ $(window).bind('load resize', function() {
         tincidunt. Donec luctus feugiat enim ac dapibus.</q></p>
       </div>
       <div class="article hardcoded">
-        <p>With hanging punctuation (pseudo-element):</p>
+        <p>With hanging punctuation (actual character):</p>
+        <p><q><strong>“</strong>Lorem ipsum dolor sit amet,</q> consectetur adipiscing elit.
+        Cras sagittis mauris ut nisi cursus eleifend. Quisque consectetur
+        gravida urna id euismod. Sed consectetur adipiscing vehicula.
+        Fusce arcu velit, scelerisque et iaculis eu, posuere quis lacus.
+        <q><strong>“</strong><b>This works also in the middle of the text.</b> Try to resize the
+        window to bring this quote to the left border.</q>
+        Sed non est eu augue vestibulum malesuada ut non purus. Suspendisse
+        vel feugiat turpis. Sed consectetur nibh ut ligula dignissim
+        tincidunt. Donec luctus feugiat enim ac dapibus.</q></p>
+      </div>
+      <div class="article cssHooks">
+        <p>With jQuery CSS hook:</p>
         <p><q><strong>“</strong>Lorem ipsum dolor sit amet,</q> consectetur adipiscing elit.
         Cras sagittis mauris ut nisi cursus eleifend. Quisque consectetur
         gravida urna id euismod. Sed consectetur adipiscing vehicula.

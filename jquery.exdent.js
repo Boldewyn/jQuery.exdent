@@ -82,4 +82,17 @@
   };
 
 
+  if ($.cssHooks) {
+    /* Allow setting via $('q').css('exdent', -10);
+     */
+    $.cssHooks['exdent'] = {
+      get: function(elem, computed, extra) {
+        return $.css(elem, marginLeft);
+      },
+      set: function(elem, value) {
+        $(elem).exdent({ by: value });
+      }
+    };
+  }
+
 })(jQuery);
