@@ -8,7 +8,7 @@
     <script src="jquery.exdent.js"></script>
     <script>
 $(window).bind('load resize', function() {
-  $('.demo-run q').exdent({ by: '-9px' });
+  $('.demo-run q').exdent({ by: '9px' });
 });
     </script>
   </head>
@@ -39,7 +39,10 @@ $(<b>'blockquote, q'</b>).exdent({
 <small>// This exdents quotes by the width of german opening quotes</small>
 $(<b>'q'</b>).exdent({
   detect: <b>'\u201E'</b>
-});</pre>
+});
+
+<small>// or maybe you want to use jQuery's .css() syntax:</small>
+$(<b>'q'</b>).css(<b>'exdent'</b>, <b>'9px'</b>);</pre>
       <p>The
       JavaScript file (minified) is 0.8 kB small and sends wire-glowing 532 bytes
       to the client if gzipped.</p>

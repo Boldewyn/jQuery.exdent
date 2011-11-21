@@ -21,7 +21,7 @@
    * js> $('article q, article blockquote').exdent({
    * ...   detect: true
    * ... });
-   * js> $('q').exdent({ by: '-.3em' });
+   * js> $('q').exdent({ by: '.3em' });
    *
    * Options:
    * - by (String): the width by which to exdent
@@ -32,7 +32,7 @@
    */
   $.fn.exdent = function(o) {
     o = $.extend({
-      by: '-.5em',
+      by: '.5em',
       detect: false
     }, o);
     if (o.detect === true) {
@@ -42,7 +42,7 @@
     return this.each(function() {
 
       var $this = $(this), left = 0,
-          width = "" + o.by, tmp, cacheKey;
+          width, tmp, cacheKey;
 
       // we must detect the desired width upfront, because we need it
       // esp. in case of :before pseudo-elements
@@ -56,12 +56,12 @@
           widthCache[cacheKey] = tmp.width();
           tmp.remove();
         }
-        width = -widthCache[cacheKey];
+        width = widthCache[cacheKey];
       } else {
         // get the numeric width instead of "em", "%", ...
-        tmp = $('<div></div>').css('width', width.replace(/^-/, ''))
+        tmp = $('<div></div>').css('width', o.by)
                               .prependTo(this);
-        width = -tmp.width();
+        width = tmp.width();
         tmp.remove();
       }
       tmp = null;
@@ -73,13 +73,26 @@
       tmp.remove();
       tmp = null;
 
-      if (left + width - 1 <= $this.parent().offset().left) {
-        $this.css('marginLeft', width).addClass('exdented');
+      if (left - width - 1 <= $this.parent().offset().left) {
+        $this.css('marginLeft', -width).addClass('exdented');
       } else {
         $this.css('marginLeft', '0').removeClass('exdented');
       }
     });
   };
 
+
+  if ($.cssHooks) {
+    /* Allow setting via $('q').css('exdent', -10);
+     */
+    $.cssHooks['exdent'] = {
+      get: function(elem, computed, extra) {
+        return $.css(elem, marginLeft);
+      },
+      set: function(elem, value) {
+        $(elem).exdent({ by: value });
+      }
+    };
+  }
 
 })(jQuery);
