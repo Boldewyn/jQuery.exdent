@@ -50,7 +50,7 @@
     set.each(function() {
 
       var $this = $(this), left = 0,
-          width = o.by, tmp, font;
+          width = "" + o.by, tmp, font;
 
       // we must detect the desired width upfront, because we need it
       // esp. in case of :before pseudo-elements
