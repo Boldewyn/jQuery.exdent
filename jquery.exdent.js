@@ -50,20 +50,21 @@
     set.each(function() {
 
       var $this = $(this), left = 0,
-          width = o.by, tmp, font;
+          width = "" + o.by, tmp, cacheKey;
 
       // we must detect the desired width upfront, because we need it
       // esp. in case of :before pseudo-elements
       if (o.detect) {
-        font = $this.css('fontWeight') + " " +
-               $this.css('fontSize') + " " +
-               $this.css('fontFamily');
-        if (! (font in widthCache)) {
-          tmp = $('<span>'+o.detect+'</span>').appendTo(this);
-          widthCache[font] = tmp.width() + 1;
+        cacheKey = $this.css('fontWeight') + " " +
+                   $this.css('fontSize') + " " +
+                   $this.css('fontFamily') + " " +
+                   o.detect;
+        if (! (cacheKey in widthCache)) {
+          tmp = $('<span>'+o.detect+'</span>').prependTo(this);
+          widthCache[cacheKey] = tmp.width();
           tmp.remove();
         }
-        width = -widthCache[font];
+        width = -widthCache[cacheKey];
       } else {
         // get the numeric width instead of "em", "%", ...
         tmp = $('<div></div>').css('width', width.replace(/^-/, ''))
@@ -75,15 +76,15 @@
 
       // this is the "true" offset in case of multiline elements
       // see <http://stackoverflow.com/q/995838/113195>
-      tmp = $('<span style="display:inline"></span>').prependTo(this);
+      tmp = $('<span style="display:inline">\u00A0</span>').prependTo(this);
       left = tmp.offset().left;
       tmp.remove();
       tmp = null;
 
-      if (left + width <= $this.parent().offset().left) {
-        $this.css('marginLeft', width);
+      if (left + width - 1 <= $this.parent().offset().left) {
+        $this.css('marginLeft', width).addClass('exdented');
       } else {
-        $this.css('marginLeft', '0');
+        $this.css('marginLeft', '0').removeClass('exdented');
       }
     });
 

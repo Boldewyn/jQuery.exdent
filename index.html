@@ -3,56 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <title>jQuery.exdent: Hanging punctuation</title>
-    <style>
-body {
-  font-family: Times New Roman, serif;
-  font-size: 16px;
-  line-height: 20px;
-  color: #333;
-}
-h1 {
-  text-align: center;
-  font: bold 48px/60px Times New Roman, serif;
-  margin: 0 0 .33em;
-  letter-spacing: .1em;
-}
-article {
-  margin: 0 auto;
-  display: block;
-  max-width: 40em;
-}
-article p {
-  margin: 0 0 20px;
-}
-pre {
-  font-size: 1em;
-  line-height: 20px;
-  padding: 0 20px;
-  margin: 0 0 20px;
-}
-.demo {
-  font-size: 24px;
-  line-height: 30px;
-  padding: 20px 40px;
-  max-width: 20em;
-  margin: 0 auto;
-}
-.demo p {
-  color: #999;
-  border-left: 1px solid #f99;
-  text-align: justify;
-}
-.demo b {
-  color: black;
-}
-q { quotes: none; }
-q:before, q:after { content: none; }
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/style.css" />
+    <script src="static/jquery.js"></script>
     <script src="jquery.exdent.js"></script>
     <script>
 $(window).bind('load resize', function() {
-  $('.demo-run').exdent({ by: '-13px' });
+  $('.demo-run').exdent({ by: '-9px' });
 });
     </script>
   </head>
@@ -65,14 +21,14 @@ $(window).bind('load resize', function() {
         punctuation</a>, an advanced typographic feature. Elements are only
         exdented, if they are at the beginning of a line. The plugin changes
         the boring:</p>
-      <div class="demo">
-        <p><q><b>“</b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      <div class="demo pretty-demo">
+        <p><q><strong>“</strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
         Ut a sapien. Aliquam aliquet purus molestie dolor. Integer quis eros
         ut erat posuere dictum.</q></p>
       </div>
       <p>to this:</p>
-      <div class="demo demo-run">
-        <p><q><b>“</b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+      <div class="demo pretty-demo demo-run">
+        <p><q><strong>“</strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
         Ut a sapien. Aliquam aliquet purus molestie dolor. Integer quis eros
         ut erat posuere dictum.</q></p>
       </div>
@@ -90,12 +46,12 @@ $(window).bind('load resize', function() {
       <h2>Options:</h2>
       <p>jQuery.exdent understands three option parameters:</p>
       <ul>
-        <li><code>by</code> (String):  the width by which to exdent,  must be negative (as
-        long as you don't want to *indent*).</li>
+        <li><code>by</code> (String or Number):  the width by which to exdent,  must be negative (as
+        long as you don't want to <em>indent</em>).</li>
         <li><code>detect</code> (Boolean or String): whether to autodetect the exdentation
         width (will ignore <code>"by"</code>).  If a string is given,  this is used
         for detection, other wise an english opening quote, U+201C.</li>
-        <li><code>selector</code> (String): the elements to exdent, defaults to 'q'.</li>
+        <li><code>selector</code> (String): the child elements to exdent, defaults to 'q'.</li>
       </ul>
       <hr/>
       <p>Note: Don't confuse this with <a href="http://api.jquery.com/jquery.extend">jQuery.extend</a>. ;-)</p>

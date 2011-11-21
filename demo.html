@@ -3,88 +3,56 @@
   <head>
     <meta charset="UTF-8">
     <title>Demo: Hanging Punctuation in CSS</title>
-    <style>
-body {
-  font-family: Times New Roman, serif;
-  font-size: 26px;
-}
-.article {
-  margin: 0 2em 2em;
-  border-left: 1px solid #faa;
-}
-.article p {
-  color: #666;
-}
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
-}
-q:before {
-  content: open-quote;
-  color: darkgreen;
-  font-weight: bold;
-}
-q:after {
-  content: close-quote;
-}
-.hardcoded q {
-  quotes: '' '' '' '';
-}
-.hardcoded q:before,
-.hardcoded q:after {
-  content: '';
-  content: none;
-}
-.article q {
-}
-.article strong {
-  color: darkgreen;
-}
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/style.css" />
+    <script src="static/jquery.js"></script>
     <script src="jquery.exdent.js"></script>
     <script>
 $(window).bind('load resize', function() {
     $('div.pseudo').exdent({ detect: true });
-    $('div.hardcoded').exdent({ by: '-.5em'  });
+    $('div.hardcoded').exdent({ by: '-.4em'  });
+    $('.a-span').exdent({ selector: 'span', detect: 'This ' });
+});
+$(document).ready(function() {
+  $('.demo').each(function() {
+  });
 });
     </script>
   </head>
   <body>
     <div>
       <p><a href="index.html">Back to the homepage.</a></p>
-      <div class="article">
-        <p>Without hanging punctuation:</p>
+      <h2>Without hanging punctuation:</h2>
+      <div class="demo">
         <p><strong>“</strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Cras sagittis mauris ut nisi cursus eleifend. Quisque consectetur
-        gravida urna id euismod. Sed consectetur adipiscing vehicula.
-        Fusce arcu velit, scelerisque et iaculis eu, posuere quis lacus.
-        Sed non est eu augue vestibulum malesuada ut non purus. Suspendisse
-        vel feugiat turpis. Sed consectetur nibh ut ligula dignissim
-        tincidunt. Donec luctus feugiat enim ac dapibus.</p>
+        Cras sagittis mauris ut nisi cursus eleifend.
+        Sed non est eu augue vestibulum malesuada ut non purus.</p>
       </div>
-      <div class="article pseudo">
-        <p>With hanging punctuation (pseudo-element):</p>
+      <h2>Hanging punctuation with a pseudo-element:</h2>
+      <pre>$('.pseudo').exdent({ detect: true });</pre>
+      <div class="demo pseudo">
         <p><q>Lorem ipsum dolor sit amet,</q> consectetur adipiscing elit.
-        Cras sagittis mauris ut nisi cursus eleifend. Quisque consectetur
-        gravida urna id euismod. Sed consectetur adipiscing vehicula.
-        Fusce arcu velit, scelerisque et iaculis eu, posuere quis lacus.
+        Cras sagittis mauris ut nisi cursus eleifend.
         <q><b>This works also in the middle of the text.</b> Try to resize the
         window to bring this quote to the left border.</q>
-        Sed non est eu augue vestibulum malesuada ut non purus. Suspendisse
-        vel feugiat turpis. Sed consectetur nibh ut ligula dignissim
-        tincidunt. Donec luctus feugiat enim ac dapibus.</q></p>
+        Sed non est eu augue vestibulum malesuada ut non purus.</q></p>
       </div>
-      <div class="article hardcoded">
-        <p>With hanging punctuation (pseudo-element):</p>
+      <h2>Setting the exdent width explicitly:</h2>
+      <pre>$('.hardcoded').exdent({ by: '-.4em' });</pre>
+      <div class="demo hardcoded">
         <p><q><strong>“</strong>Lorem ipsum dolor sit amet,</q> consectetur adipiscing elit.
-        Cras sagittis mauris ut nisi cursus eleifend. Quisque consectetur
-        gravida urna id euismod. Sed consectetur adipiscing vehicula.
-        Fusce arcu velit, scelerisque et iaculis eu, posuere quis lacus.
+        Cras sagittis mauris ut nisi cursus eleifend.
         <q><strong>“</strong><b>This works also in the middle of the text.</b> Try to resize the
         window to bring this quote to the left border.</q>
-        Sed non est eu augue vestibulum malesuada ut non purus. Suspendisse
-        vel feugiat turpis. Sed consectetur nibh ut ligula dignissim
-        tincidunt. Donec luctus feugiat enim ac dapibus.</q></p>
+        Sed non est eu augue vestibulum malesuada ut non purus.</q></p>
+      </div>
+      <h2>Exdenting &lt;span&gt;s by the length of the string "This ":</h2>
+      <pre>$('.a-span').exdent({ selector: 'span', detect: 'This ' });</pre>
+      <div class="demo a-span">
+        <p><span>This is a span. Lorem ipsum dolor sit amet,</span> consectetur adipiscing elit.
+        Cras sagittis mauris ut nisi cursus eleifend.
+        <span><b>This works also in the middle of the text.</b> Try to resize the
+        window to bring this span to the left border.</span>
+        Sed non est eu augue vestibulum malesuada ut non purus.</q></p>
       </div>
     </div>
   </body>

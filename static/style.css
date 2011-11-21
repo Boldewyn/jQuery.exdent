@@ -1,0 +1,94 @@
+body {
+  font-family: Crimson, Georgia, serif;
+  font-size: 100%;
+  line-height: 1.25;
+  color: #333;
+  margin: 3em 1em;
+}
+h1 {
+  text-align: center;
+  font:  580%/1.2931 Crimson, Georgia, serif;
+  margin: 0 0 .43104em;
+  letter-spacing: .1em;
+  color: #555;
+}
+h2 {
+  font: bold 200%/1.25 Crimson, Georgia, serif;
+  margin: 0 0 .5em;
+  color: #555;
+}
+strong {
+  color: darkgreen;
+  line-height: 0;
+}
+b {
+  color: #555;
+  line-height: 0;
+}
+hr {
+  width: 61.8%;
+  margin: 0 auto 1.25em;
+  color: #aaa;
+  background: #aaa;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+a {
+  text-decoration: none;
+}
+a:link {
+  color: #d32;
+}
+a:visited {
+  color: #c21;
+}
+a:hover {
+  border-bottom: 1px solid #f98;
+}
+article {
+  margin: 0 auto;
+  display: block;
+  max-width: 40em;
+}
+article p {
+  margin: 0 0 1.25em;
+}
+pre {
+  font-size: 1em;
+  line-height: 1.25;
+  padding: 0 1.25em;
+  margin: 0 0 1.25em;
+}
+.demo {
+  font-size: 26px;
+  line-height: 30px;
+  padding: 0 1.25em;
+}
+.pretty-demo {
+  max-width: 20em;
+  margin: 0 auto;
+}
+.demo p {
+  color: #999;
+  border-left: 1px solid #f99;
+  text-align: justify;
+  margin-bottom: .76932em;
+}
+
+q {
+  quotes: none;
+}
+q:before, q:after {
+  content: none;
+}
+.pseudo q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+.pseudo q:before {
+  content: open-quote;
+  color: darkgreen;
+  font-weight: bold;
+}
+.pseudo q:after {
+  content: close-quote;
+}
