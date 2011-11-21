@@ -81,9 +81,9 @@
       tmp = null;
 
       if (left + width <= $this.parent().offset().left) {
-        $this.css('marginLeft', width);
+        $this.css('marginLeft', width).addClass('exdented');
       } else {
-        $this.css('marginLeft', '0');
+        $this.css('marginLeft', '0').removeClass('exdented');
       }
     });
 
