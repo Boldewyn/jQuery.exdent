@@ -75,7 +75,7 @@
 
       // this is the "true" offset in case of multiline elements
       // see <http://stackoverflow.com/q/995838/113195>
-      tmp = $('<span style="display:inline"></span>').prependTo(this);
+      tmp = $('<span style="display:inline">\u00A0</span>').prependTo(this);
       left = tmp.offset().left;
       tmp.remove();
       tmp = null;
