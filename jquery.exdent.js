@@ -17,10 +17,9 @@
    * jQuery method exdent()
    *
    * Usage:
-   * js> $('body').exdent();
-   * js> $('article').exdent({
-   * ...   detect: true,
-   * ...   selector: 'blockquote, q'
+   * js> $('body q').exdent();
+   * js> $('article q, article blockquote').exdent({
+   * ...   detect: true
    * ... });
    * js> $('q').exdent({ by: '-.3em' });
    *
@@ -30,24 +29,17 @@
    *   exdentation width (will ignore "width"). If a string is given,
    *   this is used for detection, other wise an english opening quote,
    *   U+201C
-   * - selector (String): the elements to exdent, defaults to 'q'
    */
   $.fn.exdent = function(o) {
     o = $.extend({
       by: '-.5em',
-      detect: false,
-      selector: 'q'
+      detect: false
     }, o);
     if (o.detect === true) {
       o.detect = '\u201C';
     }
 
-    var set = this.filter(o.selector);
-    if (set.length === 0) {
-      set = this.find(o.selector);
-    }
-
-    set.each(function() {
+    return this.each(function() {
 
       var $this = $(this), left = 0,
           width = "" + o.by, tmp, cacheKey;
@@ -87,8 +79,6 @@
         $this.css('marginLeft', '0').removeClass('exdented');
       }
     });
-
-    return this;
   };
 
 

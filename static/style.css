@@ -27,11 +27,11 @@ b {
 }
 hr {
   width: 61.8%;
-  margin: 0 auto 1.25em;
-  color: #aaa;
-  background: #aaa;
+  margin: 2.5em auto;
+  color: #ccc;
+  background: #ccc;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
 }
 a {
   text-decoration: none;
@@ -65,7 +65,7 @@ pre {
   padding: 0 1.25em;
 }
 .pretty-demo {
-  max-width: 20em;
+  max-width: 12em;
   margin: 0 auto;
 }
 .demo p {
@@ -91,4 +91,13 @@ q:before, q:after {
 }
 .pseudo q:after {
   content: close-quote;
+}
+
+pre small {
+  font-size: 1em;
+  color: #999;
+}
+pre b {
+  font-weight: normal;
+  color: #992211;
 }

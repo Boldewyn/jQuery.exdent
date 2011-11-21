@@ -8,9 +8,9 @@
     <script src="jquery.exdent.js"></script>
     <script>
 $(window).bind('load resize', function() {
-    $('div.pseudo').exdent({ detect: true });
-    $('div.hardcoded').exdent({ by: '-.4em'  });
-    $('.a-span').exdent({ selector: 'span', detect: 'This ' });
+    $('.pseudo q').exdent({ detect: true });
+    $('.hardcoded q').exdent({ by: '-.4em'  });
+    $('.a-span span').exdent({ detect: 'This ' });
 });
 $(document).ready(function() {
   $('.demo').each(function() {
@@ -28,7 +28,7 @@ $(document).ready(function() {
         Sed non est eu augue vestibulum malesuada ut non purus.</p>
       </div>
       <h2>Hanging punctuation with a pseudo-element:</h2>
-      <pre>$('.pseudo').exdent({ detect: true });</pre>
+      <pre>$('.pseudo q').exdent({ detect: true });</pre>
       <div class="demo pseudo">
         <p><q>Lorem ipsum dolor sit amet,</q> consectetur adipiscing elit.
         Cras sagittis mauris ut nisi cursus eleifend.
@@ -37,7 +37,7 @@ $(document).ready(function() {
         Sed non est eu augue vestibulum malesuada ut non purus.</q></p>
       </div>
       <h2>Setting the exdent width explicitly:</h2>
-      <pre>$('.hardcoded').exdent({ by: '-.4em' });</pre>
+      <pre>$('.hardcoded q').exdent({ by: '-.4em' });</pre>
       <div class="demo hardcoded">
         <p><q><strong>“</strong>Lorem ipsum dolor sit amet,</q> consectetur adipiscing elit.
         Cras sagittis mauris ut nisi cursus eleifend.
@@ -45,8 +45,8 @@ $(document).ready(function() {
         window to bring this quote to the left border.</q>
         Sed non est eu augue vestibulum malesuada ut non purus.</q></p>
       </div>
-      <h2>Exdenting &lt;span&gt;s by the length of the string "This ":</h2>
-      <pre>$('.a-span').exdent({ selector: 'span', detect: 'This ' });</pre>
+      <h2>Exdenting <code>&lt;span&gt;</code>s by the length of the string <code>"This "</code>:</h2>
+      <pre>$('.a-span span').exdent({ detect: 'This ' });</pre>
       <div class="demo a-span">
         <p><span>This is a span. Lorem ipsum dolor sit amet,</span> consectetur adipiscing elit.
         Cras sagittis mauris ut nisi cursus eleifend.
