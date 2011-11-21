@@ -22,7 +22,10 @@ You can customize the plugin to fit your exdentation needs:
       by: '.5em'
     });
 
-This exdents both <blockquote> and <q> by 0.5em.
+This exdents both <blockquote> and <q>  by  0.5em.  Apart from that
+you can use jQuery's CSS function to set exdentation:
+
+    $('q').css('exdent', '.5em');
 
 See [2] for a demo and [3] for issues.
 
