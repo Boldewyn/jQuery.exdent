@@ -32,9 +32,9 @@ $(window).bind('load resize', function() {
         Ut a sapien. Aliquam aliquet purus molestie dolor.</q></p>
       </div>
       <p>You can customize the plugin to meet your exdentation needs:</p>
-      <pre><small>// This exdents both <code>&lt;blockquote&gt;</code> and <code>&lt;q&gt;</code> by -.5em</small>
+      <pre><small>// This exdents both <code>&lt;blockquote&gt;</code> and <code>&lt;q&gt;</code> by 0.5em</small>
 $(<b>'blockquote, q'</b>).exdent({
-  by: <b>'-.5em'</b>
+  by: <b>'.5em'</b>
 });
 
 <small>// This exdents quotes by the width of german opening quotes</small>
@@ -45,20 +45,21 @@ $(<b>'q'</b>).exdent({
 <small>// or maybe you want to use jQuery's .css() syntax:</small>
 $(<b>'q'</b>).css(<b>'exdent'</b>, <b>'9px'</b>);</pre>
       <p>The
-      JavaScript file (minified) is 0.8 kB small and sends wire-glowing 532 bytes
+      JavaScript file (minified) is 0.8 kB small and sends wire-glowing 532 bytes
       to the client if gzipped.</p>
       <p>See <a href="demo.html">the demo</a> yourself. <a
         href="https://github.com/Boldewyn/jQuery.exdent/issues">Issues are
       tracked</a> on Github, and the project is <a href="https://github.com/Boldewyn/jQuery.exdent/">hosted on Github</a>, too.</p>
       <hr/>
       <h2>Options:</h2>
-      <p>jQuery.exdent understands two option parameters:</p>
+      <p>jQuery.exdent understands these option parameters:</p>
       <ul>
         <li><code>by</code> (String or Number):  the width by which to exdent,  must be negative (as
         long as you don't want to <em>indent</em>).</li>
         <li><code>detect</code> (Boolean or String): whether to autodetect the exdentation
         width (will ignore <code>"by"</code>).  If a string is given,  this is used
         for detection, other wise an english opening quote, U+201C.</li>
+        <li><code>className</code> (String): class to add to / remove from exdented elements</li>
       </ul>
       <hr/>
       <p>Note: Don't confuse this with <a href="http://api.jquery.com/jquery.extend">jQuery.extend</a>. ;-)</p>
