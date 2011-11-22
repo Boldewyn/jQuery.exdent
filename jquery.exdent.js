@@ -61,8 +61,8 @@
         width = widthCache[cacheKey];
       } else {
         // get the numeric width instead of "em", "%", ...
-        tmp = $('<div></div>').css('width', o.by)
-                              .prependTo(this);
+        tmp = $('<span style="display:inline-block"></span>')
+                .css('width', o.by).prependTo(this);
         width = tmp.width();
         tmp.remove();
       }
