@@ -29,11 +29,13 @@
    *   exdentation width (will ignore "width"). If a string is given,
    *   this is used for detection, other wise an english opening quote,
    *   U+201C
+   * - className (String): class to add to / remove from exdented elements
    */
   $.fn.exdent = function(o) {
     o = $.extend({
       by: '.5em',
-      detect: false
+      detect: false,
+      className: 'exdented'
     }, o);
     if (o.detect === true) {
       o.detect = '\u201C';
@@ -74,9 +76,9 @@
       tmp = null;
 
       if (left - width - 1 <= $this.parent().offset().left) {
-        $this.css('marginLeft', -width).addClass('exdented');
+        $this.css('marginLeft', -width).addClass(o.className);
       } else {
-        $this.css('marginLeft', '0').removeClass('exdented');
+        $this.css('marginLeft', '0').removeClass(o.className);
       }
     });
   };

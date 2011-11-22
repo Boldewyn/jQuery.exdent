@@ -34,13 +34,15 @@ See [2] for a demo and [3] for issues.
 
 O p t i o n s :
 
-jQuery.exdent understands two option parameters:
+jQuery.exdent understands these option parameters:
 
 - by  (String):  the width  by which to exdent,  this is a positive
   value.
 - detect (Boolean or String): whether to autodetect the exdentation
   width (will ignore "width").  If a string is given,  this is used
   for detection, otherwise an english opening quote, U+201C.
+- className  (String):  class  to  add  to  /  remove from exdented
+  elements.
 
 
 --
