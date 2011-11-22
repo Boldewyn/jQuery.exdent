@@ -44,7 +44,7 @@
     return this.each(function() {
 
       var $this = $(this), left = 0,
-          width, tmp, cacheKey;
+          width, tmp, cacheKey, top;
 
       // we must detect the desired width upfront, because we need it
       // esp. in case of :before pseudo-elements
@@ -75,8 +75,13 @@
       tmp.remove();
       tmp = null;
 
+      $this.prev('br._exdent_helper').remove();
       if (left - width - 1 <= $this.parent().offset().left) {
+        top = $this.offset().top;
         $this.css('marginLeft', -width).addClass(o.className);
+        if (top !== $this.offset().top) {
+          $this.before('<br class="_exdent_helper"/>');
+        }
       } else {
         $this.css('marginLeft', '0').removeClass(o.className);
       }
