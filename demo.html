@@ -10,7 +10,7 @@
     <script>
 $(window).bind('load resize', function() {
     $('.pseudo q').exdent({ detect: true });
-    $('.hardcoded q').exdent({ by: '-.4em'  });
+    $('.hardcoded q').exdent({ by: '.4em'  });
     $('.a-span span').exdent({ detect: 'This ' });
     $('.cssHook q').css('exdent', '.4em');
 });
@@ -39,7 +39,7 @@ $(document).ready(function() {
         Sed non est eu augue vestibulum malesuada ut non purus.</q></p>
       </div>
       <h2>Setting the exdent width explicitly:</h2>
-      <pre>$('.hardcoded q').exdent({ by: '-.4em' });</pre>
+      <pre>$('.hardcoded q').exdent({ by: '.4em' });</pre>
       <div class="demo hardcoded">
         <p><q><strong>“</strong>Lorem ipsum dolor sit amet,</q> consectetur adipiscing elit.
         Cras sagittis mauris ut nisi cursus eleifend.
