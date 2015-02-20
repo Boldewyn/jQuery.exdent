@@ -5,7 +5,9 @@
   "keywords": [
     "typography",
     "hanging-punctuation",
-    "helper"
+    "helper",
+    "jquery-plugin",
+    "ecosystem:jquery"
   ],
   "version": "1.1.0",
   "author": {
@@ -24,9 +26,8 @@
     }
   ],
   "bugs": "https://github.com/Boldewyn/jQuery.exdent/issues",
-  "homepage": "http://boldewyn.github.com/jQuery.exdent/",
-  "docs": "http://boldewyn.github.com/jQuery.exdent/",
-  "download": "https://github.com/Boldewyn/jQuery.exdent/",
+  "homepage": "http://boldewyn.github.io/jQuery.exdent/",
+  "repository": "https://github.com/Boldewyn/jQuery.exdent.git",
   "demo": "http://boldewyn.github.com/jQuery.exdent/demo.html",
   "dependencies": {
     "jquery": ">=1.5"
